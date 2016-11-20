@@ -1,8 +1,8 @@
 //Programmer name: Hanzhi Ding
 //Programmer"s ID: 1466750
 
-#ifndef iShapes_h
-#define iShapes_h
+#ifndef pShapes_h
+#define pShapes_h
 
 // c++ libraries
 #include <iostream>
@@ -11,6 +11,9 @@ using namespace std;
 
 struct Shape
 {
+  virtual void output(ostream&) const = 0;
+  friend ostream& operator<<(ostream&, const Shape*);
+  virtual ~Shape() {};
 };
 
 class Square: public Shape
@@ -18,7 +21,7 @@ class Square: public Shape
 protected:
   const double side; // constant data member 
 public:
-  void output(ostream&) const; //m ember function
+  void output(ostream&) const; //member function
   Square (const vector<string>&); // constructor functions 
   Square& operator=(const Square&); // parameter is a constant reference
 };

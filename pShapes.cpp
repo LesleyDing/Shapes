@@ -8,8 +8,9 @@ using namespace std;
 
 // c libraries
 #include <cmath> // sqrt
+#include <cstdlib>
 
-#include "iShapes.h"
+#include "pShapes.h"
 
 const double PI = 3.14159;
 
@@ -29,7 +30,7 @@ ostream& roundingOff(ostream& out)
   return out;
 }
 
-// member functions of shapes
+//member functions of shapes
 void Square::output(ostream& out) const
 {
   out << "SQUARE side=" << side;
@@ -205,4 +206,10 @@ Prism& Prism::operator=(const Prism& copyThis)
     const_cast<double&>(host.height) = copyThis.height;
   }
   return host; // returns a "self-reference"
+}
+
+ostream& operator<<(ostream& out, const Shape* shape)
+{
+  shape->output(out);
+  return out;
 }
