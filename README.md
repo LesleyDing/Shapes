@@ -5,7 +5,7 @@ Assignment from my "Object Oriented Programming" course
 The original version based on the material learn from pervious course, and text parsing with vector STL.
 
 ##v.2
-Use "Bag"(vector<void*>Bag) to store the objects.
+Use a vector "Bag" to store the objects.
 
 ##v.3
 Add an ostream reference to the object.
