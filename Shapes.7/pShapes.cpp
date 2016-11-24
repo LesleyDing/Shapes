@@ -1,6 +1,8 @@
 //Programmer name: Hanzhi Ding
 //Programmer"s ID: 1466750
 
+#include "stdafx.h" // lab 13
+
 // c++ libraries
 #include <iostream>
 #include <vector> 
@@ -52,19 +54,19 @@ Square& Square::operator=(const Square& copyThis)
   return host; // returns a "self-reference"
 }
 
-void Rectangle::output(ostream& out) const
+void comsc::Rectangle::output(ostream& out) const
 {
   out << "RECTANGLE length=" << length << " width=" << width;
   out << roundingTwo << " area=" << length * width << " perimeter=" << (length + width) * 2 << roundingOff << endl;
 }
 
-Rectangle::Rectangle(const vector<string>& tokens)
+comsc::Rectangle::Rectangle(const vector<string>& tokens)
 : length (tokens.size() > 1 ? atof(tokens[1].c_str()) : 0), // this is the initializer list
   width (tokens.size() > 2 ? atof(tokens[2].c_str()) : 0) // this is the initializer list
 {
 }
 
-Rectangle& Rectangle::operator=(const Rectangle& copyThis)
+comsc::Rectangle& comsc::Rectangle::operator=(const comsc::Rectangle& copyThis)
 {
   Rectangle& host = *this; // a reference to the host object
   if (this != &copyThis) // skips self-copy if host and parameter are same object
@@ -145,7 +147,7 @@ void Box::output(ostream& out) const
 }
 
 Box::Box (const vector<string>& tokens)
-: Rectangle(tokens), // this is the initializer list
+: comsc::Rectangle(tokens), // this is the initializer list
   height (tokens.size() > 3 ? atof(tokens[3].c_str()) : 0) // this is the initializer list
 {
 }

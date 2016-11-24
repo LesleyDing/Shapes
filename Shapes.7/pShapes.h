@@ -26,16 +26,19 @@ public:
   Square& operator=(const Square&); // parameter is a constant reference
 };
 
-class Rectangle: public Shape
+namespace comsc
 {
-protected:
-  const double length;
-  const double width;
-public:
-  void output(ostream&) const; //member function
-  Rectangle (const vector<string>&); // constructor functions
-  Rectangle& operator=(const Rectangle&); // parameter is a constant reference
-};
+  class Rectangle : public Shape
+  {
+  protected:
+    const double length;
+    const double width;
+  public:
+    void output(ostream&) const; //member function
+    Rectangle(const vector<string>&); // constructor functions
+    Rectangle& operator=(const Rectangle&); // parameter is a constant reference
+  };
+}
 
 class Circle: public Shape
 {
@@ -65,7 +68,7 @@ public:
   Cube& operator=(const Cube&); // parameter is a constant reference
 };
 
-class Box: public Rectangle
+class Box: public comsc::Rectangle
 {
   const double height;
 public:
